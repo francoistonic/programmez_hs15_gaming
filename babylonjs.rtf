@@ -1,0 +1,1401 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fmodern\fcharset0 CourierNewPSMT;\f2\ftech\fcharset77 Symbol;
+\f3\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs34\fsmilli17333 \cf0 \expnd0\expndtw0\kerning0
+\'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 <html>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 <head>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 <title>Mazenstein</title>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 </head>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 <body>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 <h1>Bienvenue</h1>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 </body>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 </html>
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26\fsmilli13333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 class Game \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 constructor(canvasElementId) \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 this._canvas = document.getElementById(canvasElementId);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 this._engine = new BABYLON.Engine(this._canvas, true);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 createScene() \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 this._scene = new BABYLON.Scene(this._engine);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 this._scene.clearColor = new BABYLON.Color4(0, 0, 255, 1); //blue background
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 \}
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 doRender() \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 this._engine.runRenderLoop(() => \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 this._scene.render();
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 \});
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 \}
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 window.addEventListener('DOMContentLoaded', () => \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 // Create the game using the 'renderCanvas'.
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const game = new Game('renderCanvas');
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 // Create the scene.
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 game.createScene();
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 // Start render loop.
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 game.doRender();
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \});
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 <html>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 <head>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 <title>Mazenstein</title>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 <script src="https://cdn.babylonjs.com/babylon.js"></script>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 <script src="mazenstein.js"></script>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 <style>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 html, body \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 overflow: hidden;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 width : 100%;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 height : 100%;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 margin : 0;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 padding : 0;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 #renderCanvas \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 width : 100%;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 height : 100%;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \}
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 </style>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 </head>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 <body>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 <canvas id="renderCanvas"></canvas>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 </body>
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 </html>
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26\fsmilli13333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const cube = BABYLON.MeshBuilder.CreateBox("MyCube", \{ size: 1 \});
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 cube.position = BABYLON.Vector3.Zero();
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26\fsmilli13333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const cubeMaterial = new BABYLON.StandardMaterial("MyCubeMaterial", this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 cubeMaterial.diffuseColor = BABYLON.Color3.Red();
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 cube.material = cubeMaterial;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 this._camera = new BABYLON.ArcRotateCamera('MainCamera', BABYLON.Tools.ToRadians(45), BABYLON.Tools.ToRadians(45), 5, BABYLON.Vector3.Zero(), this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 this._camera.attachControl(this._canvas, true);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26\fsmilli13333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const light = new BABYLON.HemisphericLight("HemisphericLight", new BABYLON.Vector3(0, 2, 0), this._scene);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26\fsmilli13333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const ground = BABYLON.MeshBuilder.CreatePlane("ground", \{ width: 16, height: 16 \}, this._scene);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26\fsmilli13333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 ground.rotation.x = BABYLON.Tools.ToRadians(90);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 ground.position = new BABYLON.Vector3(0, -0.5, 0);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const groundMaterial = new BABYLON.StandardMaterial("gMaterial", this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 const groundTexture = new BABYLON.Texture("assets/ground.png", this._scene);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 groundMaterial.diffuseTexture = groundTexture;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 ground.material = groundMaterial;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 groundTexture.uScale = 16;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 groundTexture.vScale = 16;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 cubeMaterial.diffuseColor = BABYLON.Color3.Red();
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 cubeMaterial.diffuseTexture = new BABYLON.Texture("assets/wall.png", this._scene);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 this._camera = new BABYLON.ArcRotateCamera('MainCamera', BABYLON.Tools.ToRadians(45), BABYLON.Tools.ToRadians(45), 5, BABYLON.Vector3.Zero(), this._scene);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 this._camera = new BABYLON.UniversalCamera('MainCamera', new BABYLON.Vector3(4, 0, 4), this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 this._camera.setTarget(new BABYLON.Vector3(0, 0, 0));
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 this._camera.speed = 0.1; //set walk speed
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 this._camera.minZ = 0.01; // set clipping distance
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 this._camera.angularSensibility = 1000; //mouse sensibility
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 this._camera.keysUp = [90]; // Z Key
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 this._camera.keysDown = [83]; // S Key
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 this._camera.keysLeft = [81]; // Q Key
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 this._camera.keysRight = [68]; // D Key
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 this._scene.gravity = new BABYLON.Vector3(0, -9.81, 0);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 this._camera.applyGravity = true;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26\fsmilli13333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 this._scene.collisionsEnabled = true;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 this._camera.checkCollisions = true;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 ground.checkCollisions = true;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 cube.checkCollisions = true;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26\fsmilli13333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 this._camera.ellipsoid = new BABYLON.Vector3(0.15, 0.25, 0.15);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26\fsmilli13333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\li960\fi-960\partightenfactor0
+
+\f2\fs34\fsmilli17333 \cf0 \'e1
+\f3\fs18\fsmilli9333 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \expnd0\expndtw0\kerning0
+createCamera()
+\f0\fs32 \
+
+\f2\fs34\fsmilli17333 \'e1
+\f3\fs18\fsmilli9333 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \expnd0\expndtw0\kerning0
+createLight()
+\f0\fs32 \
+
+\f2\fs34\fsmilli17333 \'e1
+\f3\fs18\fsmilli9333 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \expnd0\expndtw0\kerning0
+createCube()
+\f0\fs32 \
+
+\f2\fs34\fsmilli17333 \'e1
+\f3\fs18\fsmilli9333 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \expnd0\expndtw0\kerning0
+createGround()
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 createScene() \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._scene = new BABYLON.Scene(this._engine);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._scene.clearColor = new BABYLON.Color4(0, 0, 255, 1);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._scene.gravity = new BABYLON.Vector3(0, -9.81, 0);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._scene.collisionsEnabled = true;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 this.createCamera();
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 this.createLight();
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this.createCube();
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 this.createGround();
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 createCamera() \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._camera = new BABYLON.UniversalCamera('MainCamera', new BABYLON.Vector3(4, 0, 4), this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._camera.setTarget(new BABYLON.Vector3(0, 0, 0));
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._camera.speed = 0.1; //set walk speed
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._camera.minZ = 0.01; // set clipping distance
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._camera.angularSensibility = 1000; //mouse sensibility
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._camera.keysUp = [90]; // Z Key
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._camera.keysDown = [83]; // S Key
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._camera.keysLeft = [81]; // Q Key
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._camera.keysRight = [68]; // D Key
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 this._scene.gravity = new BABYLON.Vector3(0, -9.81, 0);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._camera.applyGravity = true;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._camera.checkCollisions = true;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 this._camera.ellipsoid = new BABYLON.Vector3(0.15, 0.25, 0.15);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 this._camera.attachControl(this._canvas, true);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 createLight() \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const light = new BABYLON.HemisphericLight("HemisphericLight", new BABYLON.Vector3(0, 2, 0), this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 createCube() \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const cube = BABYLON.MeshBuilder.CreateBox("MyCube",\{ size: 1 \});
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 cube.position = BABYLON.Vector3.Zero();
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 const cubeMaterial = new BABYLON.StandardMaterial("MyCubeMaterial", this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 cubeMaterial.diffuseTexture = new BABYLON.Texture("assets/wall_wall90.png", this._scene);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 cube.material = cubeMaterial;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 cube.checkCollisions = true;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 createGround() \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const ground = BABYLON.MeshBuilder.CreatePlane("ground", \{ width: 16, height: 16 \}, this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 ground.rotation.x = BABYLON.Tools.ToRadians(90);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 ground.position = new BABYLON.Vector3(0, -0.5, 0);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 const groundMaterial = new BABYLON.StandardMaterial("gMaterial", this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const groundTexture = new BABYLON.Texture("assets/ground.png", this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 groundTexture.uScale = 16;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 groundTexture.vScale = 16;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 ground.checkCollisions = true;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 groundMaterial.diffuseTexture = groundTexture;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 ground.material = groundMaterial;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const cube = BABYLON.MeshBuilder.CreateBox...
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const faceColors = new Array(6);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceColors[0] = new BABYLON.Color3(1, 0, 0); //red
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceColors[1] = new BABYLON.Color3(0, 1, 0); //green
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceColors[2] = new BABYLON.Color3(0, 0, 1); //blue
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceColors[3] = new BABYLON.Color3(1, 1, 0); //yellow
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceColors[4] = new BABYLON.Color3(1, 0, 1); //magenta
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceColors[5] = new BABYLON.Color3(0, 1, 1); //teal
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const options = \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 size: 1,
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 faceColors : faceColors
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \};
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const cube = BABYLON.MeshBuilder.CreateBox("MyCube", options);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 ...
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 cubeMaterial.emissiveTexture = new BABYLON.Texture("assets/wall.png", this._scene);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 ...
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 const faceUV = new Array(4);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceUV[0] = new BABYLON.Vector4(1, 1, 0, 0);//back
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceUV[1] = new BABYLON.Vector4(0, 0, 1, 1);//front
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceUV[2] = new BABYLON.Vector4(1, 0, 0, 1);//left
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceUV[3] = new BABYLON.Vector4(1, 0, 0, 1);//right
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const options = \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 size: 1,
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 faceColors: faceColors,
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 faceUV: faceUV
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \};
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 ...
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 cubeMaterial.emissiveTexture = new BABYLON.Texture("assets/wall.png", this._scene);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 cubeMaterial.emissiveTexture = new BABYLON.Texture("assets/wall_wall90.png", this._scene);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const faceUV = new Array(4);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceUV[0] = new BABYLON.Vector4(0.5, 1, 0, 0);//back
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceUV[1] = new BABYLON.Vector4(0, 0, 0.5, 1);//front
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceUV[2] = new BABYLON.Vector4(0.5, 0, 1, 1);//left
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 faceUV[3] = new BABYLON.Vector4(0.5, 0, 1, 1);//right
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const levelMap = new BABYLON.Texture("assets/map.png", this._scene,
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 false, true, BABYLON.Texture.TRILINEAR_SAMPLINGMODE,
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 async () => \{ //onLoad callback
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 const mapPixels = await levelMap.readPixels();
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 //TODO
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 \}
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 );
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 async () => \{ //onLoad callback
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const mapPixels = await levelMap.readPixels();
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 let x = 0;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 let y = 0;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 for (let index = 0; index < mapPixels.byteLength - 4; index += 4) \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 //TODO
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 \}
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const color = new BABYLON.Color3(mapPixels[index], mapPixels[index + 1], mapPixels[index + 2]);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 if ((color.r == 255) && (color.g == 255) && (color.b == 255)) \{ //white color
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 //TODO
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \} else if ((color.r == 0) && (color.g == 0) && (color.b == 255)) \{ //blue color
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 //TODO
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 private createWall(position, textureUrl) \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const faceUV = new Array(4);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 faceUV[0] = new BABYLON.Vector4(0.5, 1, 0, 0);//back
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 faceUV[1] = new BABYLON.Vector4(0, 0, 0.5, 1);//front
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 faceUV[2] = new BABYLON.Vector4(0.5, 0, 1, 1);//left
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 faceUV[3] = new BABYLON.Vector4(0.5, 0, 1, 1);//right
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const options = \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 size: 1,
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 faceUV: faceUV
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 \};
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const cube = BABYLON.MeshBuilder.CreateBox("MyCube", options);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 cube.position = position;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 const cubeMaterial = new BABYLON.StandardMaterial("MyCubeMaterial", this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 cubeMaterial.diffuseTexture = new BABYLON.Texture(textureUrl, this._scene);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 cube.material = cubeMaterial;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 cube.checkCollisions = true;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 return wall;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 if ((color.r == 255) && (color.g == 255) && (color.b == 255)) \{ //white color
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const normalWallBox = this.createWall(new BABYLON.Vector3(x, 0, y), "assets/wall_wall90.png");
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \} else if ((color.r == 0) && (color.g == 0) && (color.b == 255)) \{ //blue color
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const normalWallBox = this.createWall(new BABYLON.Vector3(x, 0, y), "assets/wall_deco_wall_deco90.png");
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 if (...) \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \} else if (...) \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0 ...
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 x++;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 if (x % 32 == 0) \{ //end of line of pixels reached
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 x = 0;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 y++;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 createGround()
+\f0  :
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 const ground = BABYLON.MeshBuilder.CreatePlane("ground", \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 width: 32,
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 height: 32
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}, this._scene);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 ground.position = new BABYLON.Vector3((32 - 1) / 2, -0.5, (32 - 1) / 2); //on peut remplacer 32 -1 par 31, c\'92est juste pour expliciter l\'92application de la formule
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 groundTexture.uScale = 32;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 groundTexture.vScale = 32;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 private createCeiling() \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const ceiling = BABYLON.MeshBuilder.CreatePlane("ceiling", \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 width: 32,
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 height: 32
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 \}, this._scene);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 ceiling.rotation.x = BABYLON.Tools.ToRadians(-90);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 ceiling.position = new BABYLON.Vector3((t32 - 1) / 2, 0.5, (32 - 1) / 2);
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 const ceilingMaterial = new BABYLON.StandardMaterial("gMaterial", this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const ceilingTexture = new BABYLON.Texture("assets/ceiling.png", this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 ceilingTexture.uScale = 32;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 ceilingTexture.vScale = 32;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 ceilingMaterial.diffuseTexture = ceilingTexture;
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 \'a0\'a0\'a0 ceiling.material = ceilingMaterial;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs34\fsmilli17333 \cf0 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+
+\fs34\fsmilli17333 \'a0
+\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf0 private createAmbientLight() \{
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 const light = new BABYLON.HemisphericLight("HemisphericLight", new BABYLON.Vector3(0, 1, 0), this._scene);
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \'a0\'a0\'a0 light.intensity = 0;
+\f0\fs32 \
+
+\f1\fs26\fsmilli13333 \}
+\f0\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26\fsmilli13333 \cf0 \'a0
+\fs32 \
+}

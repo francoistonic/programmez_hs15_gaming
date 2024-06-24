@@ -1,0 +1,1162 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 CourierNewPS-BoldMT;\f1\fmodern\fcharset0 CourierNewPSMT;\f2\fswiss\fcharset0 Helvetica;
+\f3\ftech\fcharset77 Symbol;\f4\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;\red254\green217\blue174;\red34\green35\blue38;\red255\green255\blue255;
+\red226\green220\blue169;\red31\green37\blue39;\red0\green0\blue0;\red229\green97\blue7;\red109\green150\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c87843\c73725;\cssrgb\c17647\c18431\c19608;\cssrgb\c100000\c100000\c100000;
+\cssrgb\c90980\c88627\c71765;\cssrgb\c16078\c19216\c20392;\cssrgb\c0\c0\c0;\cssrgb\c92549\c46275\c0;\cssrgb\c49804\c66667\c100000;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 \expnd0\expndtw0\kerning0
+procedure
+\f1\b0 \cf4  TfMain\cf5 \cb6 .\cf4 \cb3 tGameloopTimer\cf5 \cb6 (\cf4 \cb3 Sender\cf5 \cb6 :\cf4 \cb3  TObject\cf5 \cb6 );
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 not
+\f1\b0 \cf5 \cb6 (\cf4 \cb3 enPause\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  jeuEnCours\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf0 \cb1 \'a0\
+\'a0\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 procedure
+\f1\b0 \cf4  TfMain\cf5 \cb6 .\cf4 \cb3 jeuEnCours\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 layZoneJeu\cf5 \cb6 .\cf4 \cb3 BeginUpdate\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  layMeteo\cf5 \cb6 .\cf4 \cb3 Visible 
+\f0\b \cf2 then
+\f1\b0 \cf4  gererMeteo\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 if recNuit.Visible then positionnerRecNuit\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 gererAnimations\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 gererPlateformeTombe\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 gererAffichageChrono\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 lblNbPoints\cf5 \cb6 .\cf4 \cb3 Text \cf5 \cb6 :=\cf4 \cb3  nbPoints\cf5 \cb6 .\cf4 \cb3 ToString\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 lblNbVie\cf5 \cb6 .\cf4 \cb3 Text \cf5 \cb6 :=\cf4 \cb3  nbVie\cf5 \cb6 .\cf4 \cb3 toString\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 lblNbBonus\cf5 \cb6 .\cf4 \cb3 Text \cf5 \cb6 :=\cf4 \cb3  nbBonus\cf5 \cb6 .\cf4 \cb3 toString\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 bouclerMusique\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 oldPosY \cf5 \cb6 :=\cf4 \cb3  joueur\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 y\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  vitesseY \cf5 \cb6 <\cf4 \cb3  vitesseYMax 
+\f0\b \cf2 then
+\f1\b0 \cf4  vitesseY \cf5 \cb6 :=\cf4 \cb3  vitesseY \cf5 \cb6 +\cf4 \cb3  gravite\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 joueur\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 y \cf5 \cb6 :=\cf4 \cb3  joueur\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 y \cf5 \cb6 +\cf4 \cb3  vitesseY\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  sautEnCours 
+\f0\b \cf2 then
+\f1\b0 \cf4  orienterSaut\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 gererTouches\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 layZoneJeu\cf5 \cb6 .\cf4 \cb3 EndUpdate\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  estFinDeJeu 
+\f0\b \cf2 then
+\f1\b0 \cf4  gererFinDeJeu
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 else
+\f1\b0 \cf4  gererBornage\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf0 \cb1 \'a0\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb6 \'a0\
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 procedure
+\f1\b0 \cf4  TfMain\cf5 \cb6 .\cf4 \cb3 deplacerScrollings\cf5 \cb6 (\cf4 \cb3 axe\cf5 \cb6 :\cf4 \cb3  TAxes\cf5 \cb6 ;\cf4 \cb3  vitesseX\cf5 \cb6 :\cf4 \cb3  Single \cf5 \cb6 =\cf4 \cb3  \cf8 \cb6 0\cf5 ;\cf4 \cb3  vitesseYScolling\cf5 \cb6 :\cf4 \cb3  Single \cf5 \cb6 =\cf4 \cb3  \cf8 \cb6 0\cf5 ;\cf4 \cb3  deplacementPlateforme\cf5 \cb6 :\cf4 \cb3  boolean \cf5 \cb6 =\cf4 \cb3  false\cf5 \cb6 );
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 layZoneJeu\cf5 \cb6 .\cf4 \cb3 BeginUpdate\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 for
+\f1\b0 \cf4  
+\f0\b \cf2 var
+\f1\b0 \cf4  scrolling 
+\f0\b \cf2 in
+\f1\b0 \cf4  listeScrollings 
+\f0\b \cf2 do
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  scrolling\cf5 \cb6 .\cf4 \cb3 vitesse \cf5 \cb6 <>\cf4 \cb3  \cf8 \cb6 0\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  \cf5 \cb6 (\cf4 \cb3 axe \cf5 \cb6 =\cf4 \cb3  x\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 or
+\f1\b0 \cf4  \cf5 \cb6 (\cf4 \cb3 axe \cf5 \cb6 =\cf4 \cb3  all\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 scrolling\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 x \cf5 \cb6 :=\cf4 \cb3  scrolling\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 x \cf5 \cb6 +\cf4 \cb3  \cf5 \cb6 (\cf4 \cb3 vitesseX \cf5 \cb6 *\cf4 \cb3  scrolling\cf5 \cb6 .\cf4 \cb3 vitesse\cf5 \cb6 );
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  scrolling\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 x \cf5 \cb6 <=\cf4 \cb3  \cf5 \cb6 -\cf4 \cb3 scrolling\cf5 \cb6 .\cf4 \cb3 rectangle\cf5 \cb6 .\cf4 \cb3 Fill\cf5 \cb6 .\cf4 \cb3 Bitmap\cf5 \cb6 .\cf4 \cb3 Bitmap\cf5 \cb6 .\cf4 \cb3 Width 
+\f0\b \cf2 then
+\f1\b0 \cf4  scrolling\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 x \cf5 \cb6 :=\cf4 \cb3  \cf8 \cb6 0
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 else
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 not
+\f1\b0 \cf5 \cb6 (\cf4 \cb3 deplacementPlateforme\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  scrolling\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 x \cf5 \cb6 >=\cf4 \cb3  \cf8 \cb6 0\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  scrolling\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 x \cf5 \cb6 :=\cf4 \cb3  \cf5 \cb6 -\cf4 \cb3 scrolling\cf5 \cb6 .\cf4 \cb3 rectangle\cf5 \cb6 .\cf4 \cb3 Fill\cf5 \cb6 .\cf4 \cb3 Bitmap\cf5 \cb6 .\cf4 \cb3 Bitmap\cf5 \cb6 .\cf4 \cb3 Width\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  scrolling\cf5 \cb6 .\cf4 \cb3 continueY 
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  \cf5 \cb6 (\cf4 \cb3 axe \cf5 \cb6 =\cf4 \cb3  y\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 or
+\f1\b0 \cf4  \cf5 \cb6 (\cf4 \cb3 axe \cf5 \cb6 =\cf4 \cb3  all\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 scrolling\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 y \cf5 \cb6 :=\cf4 \cb3  scrolling\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 y \cf5 \cb6 +\cf4 \cb3  \cf5 \cb6 (\cf4 \cb3 vitesseYScolling \cf5 \cb6 *\cf4 \cb3  scrolling\cf5 \cb6 .\cf4 \cb3 vitesse\cf5 \cb6 );
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  scrolling\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 y \cf5 \cb6 <=\cf4 \cb3  \cf5 \cb6 -\cf4 \cb3 scrolling\cf5 \cb6 .\cf4 \cb3 rectangle\cf5 \cb6 .\cf4 \cb3 Fill\cf5 \cb6 .\cf4 \cb3 Bitmap\cf5 \cb6 .\cf4 \cb3 Bitmap\cf5 \cb6 .\cf4 \cb3 Height 
+\f0\b \cf2 then
+\f1\b0 \cf4  scrolling\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 y \cf5 \cb6 :=\cf4 \cb3  \cf8 \cb6 0
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 else
+\f1\b0 \cf4  
+\f0\b \cf2 if
+\f1\b0 \cf4  scrolling\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 y \cf5 \cb6 >=\cf4 \cb3  \cf8 \cb6 0\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  scrolling\cf5 \cb6 .\cf4 \cb3 Position\cf5 \cb6 .\cf4 \cb3 y \cf5 \cb6 :=\cf4 \cb3  \cf5 \cb6 -\cf4 \cb3 scrolling\cf5 \cb6 .\cf4 \cb3 rectangle\cf5 \cb6 .\cf4 \cb3 Fill\cf5 \cb6 .\cf4 \cb3 Bitmap\cf5 \cb6 .\cf4 \cb3 Bitmap\cf5 \cb6 .\cf4 \cb3 Height\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 layZoneJeu\cf5 \cb6 .\cf4 \cb3 EndUpdate\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf0 \cb1 \'a0\
+\'a0\
+\'a0\
+\'a0\
+\pard\pardeftab720\li960\fi-960\partightenfactor0
+
+\f3\fs26\fsmilli13333 \cf4 \cb6 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 \expnd0\expndtw0\kerning0
+procedure
+\f1\b0 \cf4  TfMain\cf5 \cb6 .\cf4 \cb3 gererTouches\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 \expnd0\expndtw0\kerning0
+begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 not
+\f1\b0 \cf5 \cb6 (\cf4 \cb3 attaqueEncours\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0
+\f0\b \cf2 if
+\f1\b0 \cf4  toucheHaut 
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 not
+\f1\b0 \cf5 \cb6 (\cf4 \cb3 sautEnCours\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0
+\f0\b \cf2 if
+\f1\b0 \cf4  Niveau2Possible 
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0
+\f0\b \cf2 if
+\f1\b0 \cf4  layNiveau\cf5 \cb6 .\cf4 \cb3 Opacity \cf5 \cb6 =\cf4 \cb3  \cf8 \cb6 1\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0TAnimator\cf5 \cb6 .\cf4 \cb3 AnimateFloat\cf5 \cb6 (\cf4 \cb3 layNiveau\cf5 \cb6 ,\cf4 \cb3  \cf9 \cb6 'opacity'\cf5 ,\cf4 \cb3  opacity\cf5 \cb6 ,\cf4 \cb3  \cf8 \cb6 0.2\cf5 );
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0TAnimator\cf5 \cb6 .\cf4 \cb3 AnimateFloat\cf5 \cb6 (\cf4 \cb3 layDecorDevant\cf5 \cb6 ,\cf4 \cb3  \cf9 \cb6 'opacity'\cf5 ,\cf4 \cb3  opacity\cf5 \cb6 ,\cf4 \cb3  \cf8 \cb6 0.2\cf5 );
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0haut\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0vitesseX \cf5 \cb6 :=\cf4 \cb3  \cf8 \cb6 0\cf5 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0
+\f0\b \cf2 end
+\f1\b0 \cf4  
+\f0\b \cf2 else
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 not
+\f1\b0 \cf5 \cb6 (\cf4 \cb3 estSurPlan2\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0layNiveau\cf5 \cb6 .\cf4 \cb3 Opacity \cf5 \cb6 :=\cf4 \cb3  \cf8 \cb6 1\cf5 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0layDecorDevant\cf5 \cb6 .\cf4 \cb3 Opacity \cf5 \cb6 :=\cf4 \cb3  \cf8 \cb6 1\cf5 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0
+\f0\b \cf2 if
+\f1\b0 \cf4  toucheBas 
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0bas\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0vitesseX \cf5 \cb6 :=\cf4 \cb3  \cf8 \cb6 0\cf5 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0
+\f0\b \cf2 if
+\f1\b0 \cf4  sautEnCours 
+\f0\b \cf2 then
+\f1\b0 \cf4  vitesseY \cf5 \cb6 :=\cf4 \cb3  vitesseYMax\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0
+\f0\b \cf2 if
+\f1\b0 \cf4  toucheSauter 
+\f0\b \cf2 then
+\f1\b0 \cf4  sauter\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0
+\f0\b \cf2 if
+\f1\b0 \cf4  toucheDroite 
+\f0\b \cf2 then
+\f1\b0 \cf4  avancer\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0
+\f0\b \cf2 if
+\f1\b0 \cf4  toucheGauche 
+\f0\b \cf2 then
+\f1\b0 \cf4  reculer\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0
+\f0\b \cf2 if
+\f1\b0 \cf4  toucheAction 
+\f0\b \cf2 then
+\f1\b0 \cf4  actionner\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f3\fs26\fsmilli13333 \cf4 \'e1
+\f2\fs18\fsmilli9333 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0\'a0 
+\f1\fs26\fsmilli13333 \cf4 \cb3 \expnd0\expndtw0\kerning0
+\'a0\'a0
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+\pard\pardeftab720\li960\fi-960\partightenfactor0
+
+\f3\fs32 \cf0 \'e1
+\f2\fs18\fsmilli9333 \cb1 \kerning1\expnd0\expndtw0 \'a0\'a0\'a0\'a0\'a0 
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 \expnd0\expndtw0\kerning0
+end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf0 \cb1 \'a0\
+\'a0\
+\'a0\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 procedure
+\f1\b0 \cf4  TfMain\cf5 \cb6 .\cf4 \cb3 sauter\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 not
+\f1\b0 \cf5 \cb6 (\cf4 \cb3 attaqueEncours\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  enCollisionAvecPlateforme 
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 surPlateformeDescendante \cf5 \cb6 :=\cf4 \cb3  false\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 surPlateformeMontante \cf5 \cb6 :=\cf4 \cb3  false\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  toucheHaut 
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  estSurPlan2 
+\f0\b \cf2 then
+\f1\b0 \cf4  passerSurPlan1
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 else
+\f1\b0 \cf4  passerSurPlan2\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf4  
+\f0\b \cf2 else
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 sautEnCours \cf5 \cb6 :=\cf4 \cb3  true\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  sons 
+\f0\b \cf2 then
+\f1\b0 \cf4  PlaySound\cf5 \cb6 (\cf4 \cb3 MediaSaut\cf5 \cb6 ,\cf4 \cb3  VOLUME_SON\cf5 \cb6 );
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 JouerPoussiere\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 orienterSaut\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  joueurCourt 
+\f0\b \cf2 then
+\f1\b0 \cf4  vitesseY \cf5 \cb6 :=\cf4 \cb3  \cf5 \cb6 -\cf4 \cb3 puissanceSautCourt
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 else
+\f1\b0 \cf4  vitesseY \cf5 \cb6 :=\cf4 \cb3  \cf5 \cb6 -\cf4 \cb3 puissanceSaut\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf0 \cb1 \'a0\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb6 \'a0\
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 procedure
+\f1\b0 \cf4  TfMain\cf5 \cb6 .\cf4 \cb3 avancer\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 not
+\f1\b0 \cf5 \cb6 (\cf4 \cb3 attaqueEncours\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  surPlateformeMontante 
+\f0\b \cf2 then
+\f1\b0 \cf4  vitesseX \cf5 \cb6 :=\cf4 \cb3  \cf5 \cb6 -\cf4 \cb3 vitesseXMaxEnMontee
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 
+\f0\b \cf2 else
+\f1\b0 \cf4  vitesseX \cf5 \cb6 :=\cf4 \cb3  \cf5 \cb6 -\cf4 \cb3 vitesseXMax\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 direction \cf5 \cb6 :=\cf4 \cb3  TDirection\cf5 \cb6 .\cf4 \cb3 droite\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 oldDirection \cf5 \cb6 :=\cf4 \cb3  direction\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 not
+\f1\b0 \cf5 \cb6 (\cf4 \cb3 sautEnCours\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  peutCourirDroite 
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 joueurCourt \cf5 \cb6 :=\cf4 \cb3  true\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 tCourt\cf5 \cb6 .\cf4 \cb3 Enabled \cf5 \cb6 :=\cf4 \cb3  true\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  surPlateformeMontante 
+\f0\b \cf2 then
+\f1\b0 \cf4  vitesseX \cf5 \cb6 :=\cf4 \cb3  \cf5 \cb6 -\cf4 \cb3 vitesseXMaxEnMonteeCourt
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 else
+\f1\b0 \cf4  vitesseX \cf5 \cb6 :=\cf4 \cb3  \cf5 \cb6 -\cf4 \cb3 vitesseXMaxCourt\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 oldAnimation \cf5 \cb6 :=\cf4 \cb3  TAnimationJoueur\cf5 \cb6 .\cf4 \cb3 courtDroite\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 aniPlayer\cf5 \cb6 .\cf4 \cb3 AnimationBitmap \cf5 \cb6 :=\cf4 \cb3  playerRun\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 aniPlayer\cf5 \cb6 .\cf4 \cb3 AnimationCount \cf5 \cb6 :=\cf4 \cb3  \cf8 \cb6 8\cf5 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf4  
+\f0\b \cf2 else
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 oldAnimation \cf5 \cb6 :=\cf4 \cb3  TAnimationJoueur\cf5 \cb6 .\cf4 \cb3 marcheDroite\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 aniPlayer\cf5 \cb6 .\cf4 \cb3 AnimationBitmap \cf5 \cb6 :=\cf4 \cb3  playerWalk\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 aniPlayer\cf5 \cb6 .\cf4 \cb3 AnimationCount \cf5 \cb6 :=\cf4 \cb3  \cf8 \cb6 8\cf5 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf4  
+\f0\b \cf2 else
+\f1\b0 \cf4  orienterSaut\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf0 \cb1 \'a0\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb6 \'a0\
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 function
+\f1\b0 \cf4  TRect\cf5 \cb6 .\cf4 \cb3 IntersectsWith\cf5 \cb6 (
+\f0\b \cf2 \cb3 const
+\f1\b0 \cf4  R\cf5 \cb6 :\cf4 \cb3  TRect\cf5 \cb6 ):\cf4 \cb3  Boolean\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 Result \cf5 \cb6 :=\cf4 \cb3  \cf5 \cb6 (\cf4 \cb3 Self\cf5 \cb6 .\cf4 \cb3 Left \cf5 \cb6 <\cf4 \cb3  R\cf5 \cb6 .\cf4 \cb3 Right\cf5 \cb6 )
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 and
+\f1\b0 \cf4  \cf5 \cb6 (\cf4 \cb3 Self\cf5 \cb6 .\cf4 \cb3 Right \cf5 \cb6 >\cf4 \cb3  R\cf5 \cb6 .\cf4 \cb3 Left\cf5 \cb6 )
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 and
+\f1\b0 \cf4  \cf5 \cb6 (\cf4 \cb3 Self\cf5 \cb6 .\cf4 \cb3 Top \cf5 \cb6 <\cf4 \cb3  R\cf5 \cb6 .\cf4 \cb3 Bottom\cf5 \cb6 )
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 and
+\f1\b0 \cf4  \cf5 \cb6 (\cf4 \cb3 Self\cf5 \cb6 .\cf4 \cb3 Bottom \cf5 \cb6 >\cf4 \cb3  R\cf5 \cb6 .\cf4 \cb3 Top\cf5 \cb6 );
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+\pard\pardeftab720\sa213\partightenfactor0
+
+\f4\b \cf0 \cb1 \'a0
+\f2\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 function
+\f1\b0 \cf4  gererCollisionsPlateformes\cf5 \cb6 (\cf4 \cb3 positionJoueur \cf5 \cb6 :\cf4 \cb3  TPoint\cf5 \cb6 ;\cf4 \cb3  joueurHitBox \cf5 \cb6 :\cf4 \cb3  TRect\cf5 \cb6 ;\cf4 \cb3  unRectangle \cf5 \cb6 :\cf4 \cb3  TLayout\cf5 \cb6 ):\cf4 \cb3 TCollision\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 result\cf5 \cb6 .\cf4 \cb3 enCollision \cf5 \cb6 :=\cf4 \cb3  false\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  unRectangle\cf5 \cb6 .\cf4 \cb3 ChildrenCount \cf5 \cb6 >\cf4 \cb3  \cf8 \cb6 0\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 
+\f0\b \cf2 for
+\f1\b0 \cf4  
+\f0\b \cf2 var
+\f1\b0 \cf4  recChild 
+\f0\b \cf2 in
+\f1\b0 \cf4  unRectangle\cf5 \cb6 .\cf4 \cb3 Children 
+\f0\b \cf2 do
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  recChild is TImage 
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 var
+\f1\b0 \cf4  unEnfant \cf5 \cb6 :\cf4 \cb3  TImage \cf5 \cb6 :=\cf4 \cb3  recChild as TImage\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 var
+\f1\b0 \cf4  resultat \cf5 \cb6 :=\cf4 \cb3  gererCollisionsJoueurAvecUnePlateforme\cf5 \cb6 (\cf4 \cb3 positionJoueur\cf5 \cb6 ,\cf4 \cb3  joueurHitBox\cf5 \cb6 ,\cf4 \cb3  unEnfant\cf5 \cb6 );
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  resultat\cf5 \cb6 .\cf4 \cb3 enCollision 
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 result\cf5 \cb6 .\cf4 \cb3 enCollision \cf5 \cb6 :=\cf4 \cb3  true\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 result\cf5 \cb6 .\cf4 \cb3 objet \cf5 \cb6 :=\cf4 \cb3  unEnfant\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 result\cf5 \cb6 .\cf4 \cb3 objet\cf5 \cb6 .\cf4 \cb3 TagFloat \cf5 \cb6 :=\cf4 \cb3  resultat\cf5 \cb6 .\cf4 \cb3 value\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 break\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf0 \cb1 \'a0\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 TCollisionPlateforme \cf5 \cb6 =\cf4 \cb3  
+\f0\b \cf2 record
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 public
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 enCollision \cf5 \cb6 :\cf4 \cb3  boolean\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 value \cf5 \cb6 :\cf4 \cb3  integer\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf0 \cb1 \'a0\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 function
+\f1\b0 \cf4  gererCollisions\cf5 \cb6 (\cf4 \cb3 position \cf5 \cb6 :\cf4 \cb3  TPoint\cf5 \cb6 ;\cf4 \cb3  joueurHitBox \cf5 \cb6 :\cf4 \cb3  TRect\cf5 \cb6 ;\cf4 \cb3  unRectangle \cf5 \cb6 :\cf4 \cb3  TLayout\cf5 \cb6 ;\cf4 \cb3  detruireObjetTouche\cf5 \cb6 :\cf4 \cb3  boolean\cf5 \cb6 ):\cf4 \cb3 TCollision\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 var
+\f1\b0 \cf4  enCollision \cf5 \cb6 :=\cf4 \cb3  false\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  unRectangle\cf5 \cb6 .\cf4 \cb3 ChildrenCount \cf5 \cb6 >\cf4 \cb3  \cf8 \cb6 0\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 
+\f0\b \cf2 for
+\f1\b0 \cf4  
+\f0\b \cf2 var
+\f1\b0 \cf4  recChild 
+\f0\b \cf2 in
+\f1\b0 \cf4  unRectangle\cf5 \cb6 .\cf4 \cb3 Children 
+\f0\b \cf2 do
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 var
+\f1\b0 \cf4  unEnfant \cf5 \cb6 :=\cf4 \cb3  recChild as TImage\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 var
+\f1\b0 \cf4  rectJoueur \cf5 \cb6 :=\cf4 \cb3  TRect\cf5 \cb6 .\cf4 \cb3 Create\cf5 \cb6 (\cf4 \cb3 TPoint\cf5 \cb6 .\cf4 \cb3 Create\cf5 \cb6 (\cf4 \cb3 Round\cf5 \cb6 (\cf4 \cb3 joueurHitBox\cf5 \cb6 .\cf4 \cb3 left\cf5 \cb6 )+\cf4 \cb3 position\cf5 \cb6 .\cf4 \cb3 X\cf5 \cb6 ,\cf4 \cb3  Round\cf5 \cb6 (\cf4 \cb3 joueurHitBox\cf5 \cb6 .\cf4 \cb3 top\cf5 \cb6 )+\cf4 \cb3 position\cf5 \cb6 .\cf4 \cb3 Y\cf5 \cb6 ),\cf4 \cb3  Round\cf5 \cb6 (\cf4 \cb3 joueurHitBox\cf5 \cb6 .\cf4 \cb3 Width\cf5 \cb6 ),\cf4 \cb3  Round\cf5 \cb6 (\cf4 \cb3 joueurHitBox\cf5 \cb6 .\cf4 \cb3 Height\cf5 \cb6 ));
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0
+\f2\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 var
+\f1\b0 \cf4  recObjet \cf5 \cb6 :\cf4 \cb3  TRect\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  unEnfant\cf5 \cb6 .\cf4 \cb3 Hint\cf5 \cb6 .\cf4 \cb3 IsEmpty 
+\f0\b \cf2 or
+\f1\b0 \cf4  \cf5 \cb6 (\cf4 \cb3 pos\cf5 \cb6 (\cf9 ':'\cf5 ,\cf4 \cb3  unEnfant\cf5 \cb6 .\cf4 \cb3 Hint\cf5 \cb6 )\cf4 \cb3  \cf5 \cb6 =\cf4 \cb3  \cf8 \cb6 0\cf5 )
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 recObjet \cf5 \cb6 :=\cf4 \cb3  TRect\cf5 \cb6 .\cf4 \cb3 Create\cf5 \cb6 (\cf4 \cb3 TPoint\cf5 \cb6 .\cf4 \cb3 Create\cf5 \cb6 (\cf4 \cb3 Round\cf5 \cb6 (\cf4 \cb3 unEnfant\cf5 \cb6 .\cf4 \cb3 position\cf5 \cb6 .\cf4 \cb3 X\cf5 \cb6 ),\cf4 \cb3  Round\cf5 \cb6 (\cf4 \cb3 unEnfant\cf5 \cb6 .\cf4 \cb3 position\cf5 \cb6 .\cf4 \cb3 Y\cf5 \cb6 )),\cf4 \cb3  Round\cf5 \cb6 (\cf4 \cb3 unEnfant\cf5 \cb6 .\cf4 \cb3 Width\cf5 \cb6 ),\cf4 \cb3  Round\cf5 \cb6 (\cf4 \cb3 unEnfant\cf5 \cb6 .\cf4 \cb3 Height\cf5 \cb6 ))
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 else
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 var
+\f1\b0 \cf4  posX \cf5 \cb6 :=\cf4 \cb3  Round\cf5 \cb6 (\cf4 \cb3 unEnfant\cf5 \cb6 .\cf4 \cb3 position\cf5 \cb6 .\cf4 \cb3 X \cf5 \cb6 +\cf4 \cb3  strtointdef\cf5 \cb6 (\cf4 \cb3 unEnfant\cf5 \cb6 .\cf4 \cb3 Hint\cf5 \cb6 .\cf4 \cb3 Split\cf5 \cb6 ([\cf9 ':'\cf5 ])[\cf8 0\cf5 ],\cf8 0\cf5 ));
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 var
+\f1\b0 \cf4  posY \cf5 \cb6 :=\cf4 \cb3  Round\cf5 \cb6 (\cf4 \cb3 unEnfant\cf5 \cb6 .\cf4 \cb3 position\cf5 \cb6 .\cf4 \cb3 Y \cf5 \cb6 +\cf4 \cb3  strtointdef\cf5 \cb6 (\cf4 \cb3 unEnfant\cf5 \cb6 .\cf4 \cb3 Hint\cf5 \cb6 .\cf4 \cb3 Split\cf5 \cb6 ([\cf9 ':'\cf5 ])[\cf8 1\cf5 ],\cf8 0\cf5 ));
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 var
+\f1\b0 \cf4  width \cf5 \cb6 :=\cf4 \cb3  Round\cf5 \cb6 (\cf4 \cb3 strtointdef\cf5 \cb6 (\cf4 \cb3 unEnfant\cf5 \cb6 .\cf4 \cb3 Hint\cf5 \cb6 .\cf4 \cb3 Split\cf5 \cb6 ([\cf9 ':'\cf5 ])[\cf8 2\cf5 ],\cf8 0\cf5 ));
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 var
+\f1\b0 \cf4  height \cf5 \cb6 :=\cf4 \cb3  Round\cf5 \cb6 (\cf4 \cb3 strtointdef\cf5 \cb6 (\cf4 \cb3 unEnfant\cf5 \cb6 .\cf4 \cb3 Hint\cf5 \cb6 .\cf4 \cb3 Split\cf5 \cb6 ([\cf9 ':'\cf5 ])[\cf8 3\cf5 ],\cf8 0\cf5 ));
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 recObjet \cf5 \cb6 :=\cf4 \cb3  TRect\cf5 \cb6 .\cf4 \cb3 Create\cf5 \cb6 (\cf4 \cb3 TPoint\cf5 \cb6 .\cf4 \cb3 Create\cf5 \cb6 (\cf4 \cb3 posX\cf5 \cb6 ,\cf4 \cb3  posY\cf5 \cb6 ),\cf4 \cb3  width\cf5 \cb6 ,\cf4 \cb3  height\cf5 \cb6 );
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  rectJoueur\cf5 \cb6 .\cf4 \cb3 IntersectsWith\cf5 \cb6 (\cf4 \cb3 recObjet\cf5 \cb6 )\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 enCollision \cf5 \cb6 :=\cf4 \cb3  true\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 result\cf5 \cb6 .\cf4 \cb3 objet \cf5 \cb6 :=\cf4 \cb3  unEnfant\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  detruireObjetTouche 
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  unEnfant\cf5 \cb6 .\cf4 \cb3 ChildrenCount \cf5 \cb6 >\cf4 \cb3  \cf8 \cb6 0\cf4 \cb3  
+\f0\b \cf2 then
+\f1\b0 \cf4  
+\f0\b \cf2 begin
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 if
+\f1\b0 \cf4  unEnfant\cf5 \cb6 .\cf4 \cb3 Children\cf5 \cb6 [\cf8 0\cf5 ]\cf4 \cb3  is TAnimation 
+\f0\b \cf2 then
+\f1\b0 \cf4  \cf5 \cb6 (\cf4 \cb3 unEnfant\cf5 \cb6 .\cf4 \cb3 Children\cf5 \cb6 [\cf8 0\cf5 ]\cf4 \cb3  as TAnimation\cf5 \cb6 ).\cf4 \cb3 StopAtCurrent\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 break\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0\'a0\'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 
+\f0\b \cf2 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 result\cf5 \cb6 .\cf4 \cb3 enCollision \cf5 \cb6 :=\cf4 \cb3  enCollision\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf0 \cb1 \'a0\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 TCollision \cf5 \cb6 =\cf4 \cb3  
+\f0\b \cf2 record
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 public
+\f2\b0\fs29\fsmilli14667 \cf0 \cb6 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 enCollision \cf5 \cb6 :\cf4 \cb3  boolean\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f1\fs26\fsmilli13333 \cf4 \cb3 \'a0 objet \cf5 \cb6 :\cf4 \cb3  TImage\cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+
+\f0\b\fs26\fsmilli13333 \cf2 \cb3 end
+\f1\b0 \cf5 \cb6 ;
+\f2\fs29\fsmilli14667 \cf0 \
+\pard\pardeftab720\sa213\partightenfactor0
+\cf0 \cb1 \'a0\
+\'a0\
+}
